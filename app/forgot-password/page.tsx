@@ -42,21 +42,28 @@ export default function ForgotPasswordPage() {
     setIsLoading(true);
     try {
       const auth = getAuth();
-      await sendPasswordResetEmail(auth, values.email);
+      console.log("Attempting to send reset email to:", values.email); // Debug log
+      
+      const result = await sendPasswordResetEmail(auth, values.email);
+      console.log("Reset email result:", result); // Debug log
       
       toast({
-        title: 'Success',
-        description: 'Password reset email sent. Please check your inbox.',
+        title: "Success",
+        description: "Password reset email sent. Please check your inbox.",
       });
-
+  
       setTimeout(() => {
         router.push('/login');
       }, 3000);
     } catch (error: any) {
+      console.error("Detailed error:", error); // More detailed error logging
+      console.error("Error code:", error.code); // Firebase error code
+      console.error("Error message:", error.message); // Firebase error message
+      
       toast({
-        title: 'Error',
-        description: error.message || 'Failed to send reset email',
-        variant: 'destructive',
+        title: "Error",
+        description: `Failed to send reset email: ${error.message}`,
+        variant: "destructive",
       });
     } finally {
       setIsLoading(false);
