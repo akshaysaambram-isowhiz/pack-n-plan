@@ -1,4 +1,4 @@
-import { RegisterForm } from "@/components/register-form";
+import { RegisterForm } from "@/components/forms/register-form";
 import { PageTransition } from "@/components/page-transition";
 
 export default function RegisterPage() {

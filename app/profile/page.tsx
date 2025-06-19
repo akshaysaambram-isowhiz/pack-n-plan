@@ -1,5 +1,5 @@
 import { ProtectedRoute } from "@/components/protected-route";
-import { ProfileForm } from "@/components/profile-form";
+import { ProfileForm } from "@/components/forms/profile-form";
 import { PageTransition } from "@/components/page-transition";
 
 export default function ProfilePage() {

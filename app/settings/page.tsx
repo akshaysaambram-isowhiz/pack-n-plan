@@ -1,5 +1,5 @@
 import { ProtectedRoute } from "@/components/protected-route";
-import { SettingsForm } from "@/components/settings-form";
+import { SettingsForm } from "@/components/forms/settings-form";
 import { PageTransition } from "@/components/page-transition";
 
 export default function SettingsPage() {

@@ -1,5 +1,5 @@
 import { PageTransition } from "@/components/page-transition";
-import { FeedbackForm } from "@/components/feedback-form";
+import { FeedbackForm } from "@/components/forms/feedback-form";
 
 export default function FeedbackPage() {
   return (

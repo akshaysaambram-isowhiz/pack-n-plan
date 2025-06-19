@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { MobileMenu } from "@/components/mobile-menu";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,14 +9,16 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useAuth } from "@/contexts/auth-context";
+import { motion } from "framer-motion";
 import {
-  PlaneIcon as PlaneLine,
   Home,
   MessageSquare,
+  PlaneIcon as PlaneLine,
   User,
 } from "lucide-react";
-import { useAuth } from "@/contexts/auth-context";
-import { MobileMenu } from "@/components/mobile-menu";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/", icon: Home },
@@ -87,7 +87,7 @@ export function Navigation() {
                       <Link href="/saved-trips">Saved Trips</Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => logout()}>
+                    <DropdownMenuItem onClick={logout}>
                       Sign Out
                     </DropdownMenuItem>
                   </DropdownMenuContent>
